@@ -2,6 +2,8 @@ package com.intellijide.linecomparisonprogram;
 
 import java.util.Scanner;
 
+//import static java.lang.Double.compare;
+
 public class LineComparison {
     public static void main(String[] args) {
         System.out.println("Welcome to line comparison computation program");
@@ -25,17 +27,20 @@ public class LineComparison {
         System.out.println("Enter y4 : ");
         double y4=scanner.nextDouble();
 
-        Double lineLength1 = Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
-        Double lineLength2 = Math.sqrt((x4 - x3) * (x4 - x3) + (y4 - y3) * (y4 - y3));
+        double lineLength1 = Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+        double lineLength2 = Math.sqrt((x4 - x3) * (x4 - x3) + (y4 - y3) * (y4 - y3));
 
         System.out.println("-------------------------------------");
         System.out.println(" Length of line 1 is  : "+lineLength1);
         System.out.println(" Length of line 2 is  : "+lineLength2);
         //used equals method
-        if(lineLength1.equals(lineLength2)) {
-            System.out.println(" Both Lines are equals ");
+        if(compare(lineLength1,lineLength2)) {
+            System.out.println(" Line 1 is greater than line 2 ");
         }else {
-            System.out.println(" Both Lines are not equals ");
+            System.out.println(" line 2 is greater than line 1 ");
         }
+    }
+    private static boolean compare(double lineLength1, double lineLength2) {
+        return false;
     }
 }
